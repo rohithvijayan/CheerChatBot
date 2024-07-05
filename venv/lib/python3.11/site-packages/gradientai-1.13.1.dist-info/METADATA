@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: gradientai
+Version: 1.13.1
+Summary: Gradient AI API
+Home-page: https://github.com/Preemo-Inc/gradientai-python-sdk
+License: MIT
+Keywords: Gradient AI API,ai,artificial intelligence,fine-tuning,large language model,llm,gradient,gradient ai
+Author: Gradient AI Support
+Author-email: support@gradient.ai
+Requires-Python: >=3.8.1,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: aenum (>=3.1.11)
+Requires-Dist: pydantic (>=1.10.15,<3)
+Requires-Dist: python-dateutil (>=2.8.2)
+Requires-Dist: urllib3 (>=1.25.3)
+Project-URL: Repository, https://github.com/Preemo-Inc/gradientai-python-sdk
+Description-Content-Type: text/markdown
+
+# Gradient Python SDK
+
+The [Gradient Python SDK](https://docs.gradient.ai/docs/sdk-quickstart) is the official Python client for the API at gradient.ai, and is released on [PyPi](https://pypi.org/project/gradientai/).
+
+# Installation and Usage
+
+```
+pip install --upgrade gradientai
+```
+
+[For more details, visit the docs on our website.](https://docs.gradient.ai/docs/sdk-quickstart)
+
