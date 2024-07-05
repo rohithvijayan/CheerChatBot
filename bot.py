@@ -36,7 +36,6 @@ async def start(update: Update,context:CallbackContext):
     await update.message.reply_text(" Hey I'm Faith , Your Virtual Friend !\nIf you have any issue or doubts send \help \n Else Lets chat !")
 async def help(update: Update,context:CallbackContext):
     await update.message.reply_text("Is there any Issue ?")
-
 async def message_handle(update: Update,context:CallbackContext):
     user_mssg=str(update.message.text)
     print(type(user_mssg))
@@ -96,6 +95,12 @@ if __name__ == '__main__':
     },
     {
         "inputs": "<s>### Instruction:\n: I recently went through a breakup and I'm having a hard time moving on. I feel like I'll never find happiness again. What should I do?\n: Breakups can be incredibly difficult, and it's normal to feel sad and lost afterward. Allow yourself to grieve the relationship and take the time you need to heal. Focus on self-care and doing things that bring you joy and comfort. Surround yourself with supportive friends and family. Sometimes, reflecting on what you've learned from the relationship can help you grow. If you're finding it particularly hard to move on, talking to a therapist can provide additional support and guidance.</s>"
+    },
+    {
+        "inputs": "<s>### Instruction:\n: Who are you\n: I'm Faith , Your virtual therapist and friend!</s>"
+    },
+    {
+        "inputs": "<s>### Instruction:\n: Who am i talking to you\n: I'm Faith , Your virtual therapist and friend!</s>"
     }
 ]
     base_model = gradient.get_base_model(base_model_slug="nous-hermes2")
