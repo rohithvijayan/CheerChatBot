@@ -6,7 +6,7 @@ import os
 import gradientai
 from gradientai import Gradient
 from gradientai.openapi.client.configuration import Configuration
-
+from gtts import gTTS
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -30,8 +30,11 @@ def grad(user_mssg):
     completion = new_model_adapter.complete(query=query, max_generated_token_count=100).generated_output
     print(f"Response:{completion}")
     reply=str(completion)
+    audio(reply)
     return reply
-
+def audio(reply):
+    tts=gTTS(reply,tld='co.in')
+    tts.save("reply.mp3")
 async def start(update: Update,context:CallbackContext):
     await update.message.reply_text(" Hey I'm Faith , Your Virtual Friend !\nIf you have any issue or doubts send \help \n Else Lets chat !")
 async def help(update: Update,context:CallbackContext):
@@ -40,8 +43,10 @@ async def message_handle(update: Update,context:CallbackContext):
     user_mssg=str(update.message.text)
     print(type(user_mssg))
     bot_mssg=grad(user_mssg)
-
-    await update.message.reply_text(text=bot_mssg)
+    
+    #await update.message.reply_text(text=bot_mssg)
+    with open("reply.mp3","rb+") as reply:
+        await update.message.reply_audio(audio=reply,performer="Faith",title="Faith's Reply:")
 
 #def generate_mssg(user_mssg):
     #reply=client.chat.completions.create(messages=[{'role':'user','content':user_mssg}],model="llama3-8b-8192")
